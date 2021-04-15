@@ -18,10 +18,11 @@ public with sharing class SearchAndDelete implements Database.Batchable<sObject>
     }
     
     public GEO_SearchAndDelete(String entity, Integer daysToSave){
-        this.query = queryBuilder(entity, daysToSave);
-        this.entity = entity; 
-        this.daysToSave = daysToSave;
-        
+        if(!(entity == null) && !(daysToSave == null)){
+            this.query = queryBuilder(entity, daysToSave);
+            this.entity = entity; 
+            this.daysToSave = daysToSave;
+        }
     }
     
     public Database.QueryLocator start(Database.BatchableContext bc){
