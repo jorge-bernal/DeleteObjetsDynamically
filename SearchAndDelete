@@ -3,7 +3,7 @@
  * @author: Jorge Bernal <jorge.bernal@geoalternativa.es>
  * @date: 02/09/2020
  */
-public class GEO_SearchAndDelete implements Database.Batchable<sObject>{
+public class SearchAndDelete implements Database.Batchable<sObject>{
     
     public final String query;
     public final String entity;
